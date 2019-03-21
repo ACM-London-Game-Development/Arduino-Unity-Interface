@@ -55,7 +55,14 @@ public class ArduinoInput : MonoBehaviour
         // Set up our Serial Port with the given settings
         arduinoPort = new SerialPort(portName, baudRate);
         // Open that port
-        arduinoPort.Open();
+        try
+        {
+            arduinoPort.Open();
+        }
+        catch
+        {
+            Debug.LogError("Cannot Open Serial Port");
+        }
 
         // Check if the port is open or not
         if (arduinoPort.IsOpen)
@@ -65,7 +72,7 @@ public class ArduinoInput : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Unable to Open Port on " + portName);
+            Debug.LogError("Unable to Open Port on " + portName + " with baud " + baudRate);
         }
 
     }
