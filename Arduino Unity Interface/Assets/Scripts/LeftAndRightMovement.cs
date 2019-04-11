@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This class only works if you have an ArduinoInput class on the same GameObject
-[RequireComponent(typeof(ArduinoInput))]
+[RequireComponent(typeof(ArduinoInputOutput))]
 public class LeftAndRightMovement : MonoBehaviour
 {
 
-    ArduinoInput arduinoInput;
+    ArduinoInputOutput arduinoInput;
     public float speed = 1.0f;
 
     void Start()
     {
-        arduinoInput = GetComponent<ArduinoInput>();
+        arduinoInput = GetComponent<ArduinoInputOutput>();
     }
 
     void Update()

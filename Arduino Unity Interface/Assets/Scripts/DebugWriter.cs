@@ -4,15 +4,15 @@ using UnityEngine;
 
 
 // This class only works if you have an ArduinoInput class on the same GameObject
-[RequireComponent(typeof(ArduinoInput))]
+[RequireComponent(typeof(ArduinoInputOutput))]
 public class DebugWriter : MonoBehaviour
 {
 
-    ArduinoInput arduinoInput;
+    ArduinoInputOutput arduinoInput;
 
     void Start()
     {
-        arduinoInput = GetComponent<ArduinoInput>();
+        arduinoInput = GetComponent<ArduinoInputOutput>();
     }
 
 
